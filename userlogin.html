@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login - Blood Bank Management System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+      }
+
+      .navbar {
+        background-color: #ff0000;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 18px;
+      }
+
+      .logout-form {
+        display: inline;
+      }
+
+      .logout-button {
+        background-color: #ff0000;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 3px;
+        font-size: 16px;
+      }
+
+      .logout-button:hover {
+        background-color: #c82333;
+      }
+
+      .login-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+        margin: 50px auto;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #ff0000;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #c82333;
+      }
+      .signup-link {
+        text-align: center;
+        margin-top: 15px;
+        color: #333;
+      }
+      .signup-link a {
+        color: #d9534f;
+        text-decoration: none;
+      }
+      .signup-link a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/">Home</a>
+    </nav>
+    <div class="login-container">
+      <h2>User Login</h2>
+      <form action="/login" method="post">
+        {% include "message.html" %} 
+        <label for="id">User ID</label>
+        <input type="text" name="id" required />
+
+        <label for="password">Password</label>
+        <input type="password" name="password" required />
+
+        <button type="submit">Login</button>
+      </form>
+      <div class="signup-link">
+        Don't have an account? <a href="/usersignup">Sign up</a>
+      </div>
+    </div>
+  </body>
+</html>

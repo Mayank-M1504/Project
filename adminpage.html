@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blood Details - Blood Bank Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #FF0000;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 18px;
+        }
+
+        .logout-form {
+            display: inline;
+        }
+
+        .logout-button {
+            background-color: #FF0000;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        .logout-button:hover {
+            background-color: #C82333;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            margin: 50px auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #FF0000;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #C82333;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/logoutadmin">Logout</a>
+        <a href="/custfeedback">View Customers Feedback</a>
+        <a href="/blood-details">Inventory</a>
+
+    </nav>
+    <div class="form-container">
+        <h2>Add Blood Details</h2>
+        <form action="/adminadd" method="post">
+            {% include "message.html" %} 
+
+            <label for="type">Blood Type</label>
+            <input type="text"  name="type" required>
+            
+            <label for="quantity">Quantity</label>
+            <input type="number"  name="qty" required>
+
+            <label for="doctorid">Doctor ID</label>
+            <input type="text" name="doctorid" required>
+          
+            <label for="disease">Disease (if any)</label>
+            <input type="text"  name="disease">
+            
+            <button type="submit">Add Blood</button>
+        </form>
+    </div>
+</body>
+</html>
